@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Content-Length: 11319
+Vary: Accept-Encoding
+Date: Thu, 08 Oct 2026 17:44:56 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+

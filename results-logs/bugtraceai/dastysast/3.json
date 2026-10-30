@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "url": "http://host.docker.internal:3000/api/users/me",
+    "url_index": 3,
+    "scan_context": "1",
+    "timestamp": 1791393413.9202614,
+    "tech_profile": {
+      "frameworks": [
+        "AngularJS"
+      ],
+      "libraries": [],
+      "server": "unknown",
+      "language": ""
+    }
+  },
+  "statistics": {
+    "total_vulnerabilities": 0,
+    "high_confidence": 0,
+    "medium_confidence": 0,
+    "low_confidence": 0,
+    "by_type": {}
+  },
+  "vulnerabilities": []
+}

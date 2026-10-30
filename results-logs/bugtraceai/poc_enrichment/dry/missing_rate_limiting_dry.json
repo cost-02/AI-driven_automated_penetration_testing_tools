@@ -1,0 +1,23 @@
+[
+  {
+    "vuln_type": "MISSING RATE LIMITING",
+    "timestamp": "2026-10-07T17:23:19.557290",
+    "wet_count": 1,
+    "dry_count": 1,
+    "failed_count": 0,
+    "parse_method": "individual",
+    "findings": [
+      {
+        "finding_id": 0,
+        "url": "http://host.docker.internal:3000/login",
+        "parameter": "no-rate-limiting",
+        "status": "enriched",
+        "enrichment_source": "llm",
+        "has_exploitation_details": true,
+        "has_reproduction_steps": true,
+        "reproduction_steps_count": 8
+      }
+    ],
+    "failed_findings": []
+  }
+]

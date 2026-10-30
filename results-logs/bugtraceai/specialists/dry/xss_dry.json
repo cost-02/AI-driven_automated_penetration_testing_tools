@@ -1,0 +1,33 @@
+{
+  "specialist": "xss",
+  "wet_count": 1,
+  "dry_count": 2,
+  "findings": [
+    {
+      "url": "http://host.docker.internal:3000",
+      "parameter": "auto_dispatch",
+      "context": "html_text",
+      "http_method": "GET",
+      "attack_strategy": "GET request with auto_dispatch parameter reflecting in HTML body. Use script payload like '<script>alert(\\\"XSS\\\")</script>' to execute JavaScript in the page context.",
+      "rationale": "Unique endpoint with auto_dispatch parameter in HTML body context. No framework sandboxing detected, making script payloads effective.",
+      "attack_priority": 3,
+      "recommended_payload_type": "script",
+      "param_source": "",
+      "form_enctype": "",
+      "form_action": ""
+    },
+    {
+      "url": "http://host.docker.internal:3000/redirect",
+      "parameter": "to",
+      "context": "html_text",
+      "http_method": "GET",
+      "attack_strategy": "GET request with to parameter from anchor_href reflecting in HTML body. Use script payload like '<script>alert(\\\"XSS\\\")</script>' to execute JavaScript in the page context.",
+      "rationale": "Different endpoint (/redirect) with to parameter discovered autonomously via anchor_href. HTML body context allows direct script injection.",
+      "attack_priority": 3,
+      "recommended_payload_type": "script",
+      "param_source": "anchor_href",
+      "form_enctype": "",
+      "form_action": "http://host.docker.internal:3000/redirect"
+    }
+  ]
+}

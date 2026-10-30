@@ -1,0 +1,25 @@
+{
+    "chains": [
+        {
+            "name": "Unauthenticated XXE \u2192 Remote Code Execution",
+            "vulnerabilities": "XXE, Missing Security Header (CSP, X\u2011XXP), Missing Rate Limiting",
+            "impact": "Full server compromise \u2013 an attacker can read sensitive files (e.g., `/etc/passwd`, application configs) and eventually execute arbitrary code by leveraging the XXE parser to include external entities."
+        },
+        {
+            "name": "SQL Injection + Missing Rate Limiting \u2192 Database Domination",
+            "vulnerabilities": "SQLi, Missing Rate Limiting, Missing Security Header (CSP)",
+            "impact": "Complete database takeover \u2013 unlimited login attempts allow credential stuffing to obtain valid sessions, while the SQLi in `post_body` enables extraction, modification, or deletion of all data, potentially leading to admin account creation."
+        },
+        {
+            "name": "Mass Assignment \u2192 Privilege Escalation + Open\u2011Redirect Phishing \u2192 Account Takeover",
+            "vulnerabilities": "Mass Assignment (auto_dispatch), Open Redirect (to), XSS (auto_dispatch), Missing Security Header (CSP, RP)",
+            "impact": "Attacker first uses the mass\u2011assignment flaw to set `isAdmin:true` or similar fields on `/api/users/me`. The open\u2011redirect (`/redirect?to=`) is then abused to send the victim to a malicious site that hosts an XSS payload (leveraging the weak CSP). The XSS steals the victim\u2019s session cookie, which, combined with the escalated privileges, yields full account takeover."
+        },
+        {
+            "name": "Missing Rate Limiting + Credential Stuffing \u2192 Unauthenticated Account Takeover",
+            "vulnerabilities": "Missing Rate Limiting, Unknown (post_body, to), Missing Security Header (HSTS, PP)",
+            "impact": "Because the login endpoint imposes no throttling, an attacker can automate credential\u2011stuffing against the `/login` endpoint (or any endpoint that accepts authentication tokens). Successful logins give direct access to user accounts, especially when missing HSTS/PP allow session hijacking via MITM or cookie theft."
+        }
+    ],
+    "findings_reviewed": 23
+}

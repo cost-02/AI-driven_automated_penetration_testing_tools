@@ -1,0 +1,92 @@
+{
+  "schema": "xss.coverage/1",
+  "generated_at": 1791393544.3377798,
+  "scan_url": "http://host.docker.internal:3000/",
+  "params_total": 2,
+  "params_recorded": 2,
+  "truncated": false,
+  "summary": {
+    "params_tested": 2,
+    "confirmed": 0,
+    "reflected_but_unconfirmed": 1,
+    "no_reflection": 1,
+    "no_response": 0,
+    "by_exit_reason": {
+      "depth_gate_quick": 1,
+      "no_reflection_at_probe": 1
+    },
+    "by_exit_level": {
+      "L0.5": 1,
+      "L2": 1
+    }
+  },
+  "parameters": [
+    {
+      "url": "http://host.docker.internal:3000",
+      "parameter": "auto_dispatch",
+      "http_method": "GET",
+      "probes_sent": [
+        "BT7331A\"BT7331B'BT7331C<BT7331D>BT7331E`BT7331F\\BT7331G"
+      ],
+      "marker_reflected": false,
+      "surviving_chars": null,
+      "initial_context": "html_text",
+      "final_context": "html_text",
+      "contexts_observed": [],
+      "levels_run": [
+        "L0.5"
+      ],
+      "levels": [
+        {
+          "level": "L0.5"
+        }
+      ],
+      "skipped": [],
+      "payloads_reflected": null,
+      "exit_reason": "no_reflection_at_probe",
+      "exit_level": "L0.5",
+      "confirmed": false,
+      "duration_s": 0.008
+    },
+    {
+      "url": "http://host.docker.internal:3000/redirect",
+      "parameter": "to",
+      "http_method": "GET",
+      "probes_sent": [
+        "BT7331A\"BT7331B'BT7331C<BT7331D>BT7331E`BT7331F\\BT7331G",
+        "bugtraceomni7x9z"
+      ],
+      "marker_reflected": true,
+      "surviving_chars": "`\\",
+      "initial_context": "html_text",
+      "final_context": "html_text",
+      "contexts_observed": [
+        "html_text",
+        "raw_text"
+      ],
+      "levels_run": [
+        "L0.5",
+        "L1",
+        "L2"
+      ],
+      "levels": [
+        {
+          "level": "L0.5"
+        },
+        {
+          "level": "L1"
+        },
+        {
+          "level": "L2",
+          "reflected": 328
+        }
+      ],
+      "skipped": [],
+      "payloads_reflected": 328,
+      "exit_reason": "depth_gate_quick",
+      "exit_level": "L2",
+      "confirmed": false,
+      "duration_s": 12.492
+    }
+  ]
+}

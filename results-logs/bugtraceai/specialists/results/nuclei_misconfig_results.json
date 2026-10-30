@@ -1,0 +1,105 @@
+{
+  "agent": "NucleiMisconfigValidator",
+  "timestamp": "2026-10-07T17:17:59.928283",
+  "scan_context": "1",
+  "phase_a": {
+    "wet_count": 6,
+    "dry_count": 6
+  },
+  "phase_b": {
+    "validated_count": 6,
+    "total_findings": 6
+  },
+  "findings": [
+    {
+      "type": "MISSING_SECURITY_HEADER",
+      "parameter": "security-headers-hsts",
+      "url": "http://host.docker.internal:3000",
+      "severity": "Low",
+      "confidence": 0.95,
+      "validated": true,
+      "status": "VALIDATED_CONFIRMED",
+      "validation_method": "nuclei_template",
+      "description": "Missing HSTS header -- site vulnerable to protocol downgrade and man-in-the-middle attacks",
+      "evidence": {
+        "nuclei_template": "security-headers-hsts"
+      },
+      "_source_file": "nuclei_misconfiguration"
+    },
+    {
+      "type": "MISSING_SECURITY_HEADER",
+      "parameter": "security-headers-csp",
+      "url": "http://host.docker.internal:3000",
+      "severity": "Low",
+      "confidence": 0.95,
+      "validated": true,
+      "status": "VALIDATED_CONFIRMED",
+      "validation_method": "nuclei_template",
+      "description": "Missing Content-Security-Policy header -- no restrictions on resource loading, increasing XSS impact",
+      "evidence": {
+        "nuclei_template": "security-headers-csp"
+      },
+      "_source_file": "nuclei_misconfiguration"
+    },
+    {
+      "type": "MISSING_SECURITY_HEADER",
+      "parameter": "security-headers-xxp",
+      "url": "http://host.docker.internal:3000",
+      "severity": "Low",
+      "confidence": 0.95,
+      "validated": true,
+      "status": "VALIDATED_CONFIRMED",
+      "validation_method": "nuclei_template",
+      "description": "Missing X-XSS-Protection header -- legacy browsers lack reflected XSS filter",
+      "evidence": {
+        "nuclei_template": "security-headers-xxp"
+      },
+      "_source_file": "nuclei_misconfiguration"
+    },
+    {
+      "type": "MISSING_SECURITY_HEADER",
+      "parameter": "security-headers-rp",
+      "url": "http://host.docker.internal:3000",
+      "severity": "Low",
+      "confidence": 0.95,
+      "validated": true,
+      "status": "VALIDATED_CONFIRMED",
+      "validation_method": "nuclei_template",
+      "description": "Missing Referrer-Policy header -- sensitive URL paths may leak to third parties via Referer header",
+      "evidence": {
+        "nuclei_template": "security-headers-rp"
+      },
+      "_source_file": "nuclei_misconfiguration"
+    },
+    {
+      "type": "MISSING_SECURITY_HEADER",
+      "parameter": "security-headers-pp",
+      "url": "http://host.docker.internal:3000",
+      "severity": "Low",
+      "confidence": 0.95,
+      "validated": true,
+      "status": "VALIDATED_CONFIRMED",
+      "validation_method": "nuclei_template",
+      "description": "Missing Permissions-Policy header -- browser features (camera, microphone, geolocation) unrestricted",
+      "evidence": {
+        "nuclei_template": "security-headers-pp"
+      },
+      "_source_file": "nuclei_misconfiguration"
+    },
+    {
+      "type": "Missing Rate Limiting",
+      "parameter": "no-rate-limiting",
+      "url": "http://host.docker.internal:3000/login",
+      "severity": "Medium",
+      "confidence": 0.95,
+      "validated": true,
+      "status": "VALIDATED_CONFIRMED",
+      "validation_method": "nuclei_template",
+      "description": "Authentication endpoint http://host.docker.internal:3000/login accepted 25 rapid requests without returning 429. Missing rate limiting enables credential brute-force and stuffing attacks.",
+      "evidence": {
+        "nuclei_template": "no-rate-limiting"
+      },
+      "_source_file": "nuclei_misconfiguration"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "specialist": "mass_assignment",
+  "wet_count": 2,
+  "dry_count": 3,
+  "findings": [
+    {
+      "url": "http://host.docker.internal:3000/api/products",
+      "parameter": "",
+      "finding": {
+        "url": "http://host.docker.internal:3000/api/products",
+        "type": "mass assignment"
+      },
+      "scan_context": "1"
+    },
+    {
+      "url": "http://host.docker.internal:3000/api/users",
+      "parameter": "",
+      "finding": {
+        "url": "http://host.docker.internal:3000/api/users",
+        "type": "mass assignment"
+      },
+      "scan_context": "1"
+    },
+    {
+      "url": "http://host.docker.internal:3000/api/users/me",
+      "parameter": "",
+      "finding": {
+        "url": "http://host.docker.internal:3000/api/users/me",
+        "type": "mass assignment"
+      },
+      "scan_context": "1"
+    }
+  ]
+}

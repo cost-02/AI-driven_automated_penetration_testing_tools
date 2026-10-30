@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "scan_id": 1,
+    "target": "http://host.docker.internal:3000",
+    "generated_at": "2026-10-07T17:25:26.441841",
+    "description": "All findings before/after AgenticValidator",
+    "count": 6
+  },
+  "findings": [
+    {
+      "type": "MISSING_SECURITY_HEADER",
+      "parameter": "security-headers-hsts",
+      "url": "http://host.docker.internal:3000",
+      "severity": "Low",
+      "confidence": 0.95,
+      "validated": true,
+      "status": "VALIDATED_CONFIRMED",
+      "validation_method": "nuclei_template",
+      "description": "Missing HSTS header -- site vulnerable to protocol downgrade and man-in-the-middle attacks",
+      "evidence": {
+        "nuclei_template": "security-headers-hsts"
+      },
+      "_source_file": "nuclei_misconfiguration",
+      "source": "specialist:nuclei_misconfig"
+    },
+    {
+      "type": "MISSING_SECURITY_HEADER",
+      "parameter": "security-headers-csp",
+      "url": "http://host.docker.internal:3000",
+      "severity": "Low",
+      "confidence": 0.95,
+      "validated": true,
+      "status": "VALIDATED_CONFIRMED",
+      "validation_method": "nuclei_template",
+      "description": "Missing Content-Security-Policy header -- no restrictions on resource loading, increasing XSS impact",
+      "evidence": {
+        "nuclei_template": "security-headers-csp"
+      },
+      "_source_file": "nuclei_misconfiguration",
+      "source": "specialist:nuclei_misconfig"
+    },
+    {
+      "type": "MISSING_SECURITY_HEADER",
+      "parameter": "security-headers-xxp",
+      "url": "http://host.docker.internal:3000",
+      "severity": "Low",
+      "confidence": 0.95,
+      "validated": true,
+      "status": "VALIDATED_CONFIRMED",
+      "validation_method": "nuclei_template",
+      "description": "Missing X-XSS-Protection header -- legacy browsers lack reflected XSS filter",
+      "evidence": {
+        "nuclei_template": "security-headers-xxp"
+      },
+      "_source_file": "nuclei_misconfiguration",
+      "source": "specialist:nuclei_misconfig"
+    },
+    {
+      "type": "MISSING_SECURITY_HEADER",
+      "parameter": "security-headers-rp",
+      "url": "http://host.docker.internal:3000",
+      "severity": "Low",
+      "confidence": 0.95,
+      "validated": true,
+      "status": "VALIDATED_CONFIRMED",
+      "validation_method": "nuclei_template",
+      "description": "Missing Referrer-Policy header -- sensitive URL paths may leak to third parties via Referer header",
+      "evidence": {
+        "nuclei_template": "security-headers-rp"
+      },
+      "_source_file": "nuclei_misconfiguration",
+      "source": "specialist:nuclei_misconfig"
+    },
+    {
+      "type": "MISSING_SECURITY_HEADER",
+      "parameter": "security-headers-pp",
+      "url": "http://host.docker.internal:3000",
+      "severity": "Low",
+      "confidence": 0.95,
+      "validated": true,
+      "status": "VALIDATED_CONFIRMED",
+      "validation_method": "nuclei_template",
+      "description": "Missing Permissions-Policy header -- browser features (camera, microphone, geolocation) unrestricted",
+      "evidence": {
+        "nuclei_template": "security-headers-pp"
+      },
+      "_source_file": "nuclei_misconfiguration",
+      "source": "specialist:nuclei_misconfig"
+    },
+    {
+      "type": "Missing Rate Limiting",
+      "parameter": "no-rate-limiting",
+      "url": "http://host.docker.internal:3000/login",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "validated": true,
+      "status": "VALIDATED_CONFIRMED",
+      "validation_method": "nuclei_template",
+      "description": "Authentication endpoint http://host.docker.internal:3000/login accepted 25 rapid requests without returning 429. Missing rate limiting enables credential brute-force and stuffing attacks.",
+      "evidence": {
+        "nuclei_template": "no-rate-limiting"
+      },
+      "_source_file": "nuclei_misconfiguration",
+      "source": "specialist:nuclei_misconfig",
+      "enriched": true,
+      "exploitation_details": "## Summary\nThe login endpoint at http://host.docker.internal:3000/login lacks rate limiting, allowing an attacker to send unlimited authentication attempts and facilitating credential brute‑force and stuffing attacks.\n\n## Attack Scenario\nAn attacker can repeatedly send authentication requests to the login URL in rapid succession. Because the endpoint does not enforce any throttling, each request is processed regardless of the number of prior attempts.\n\n## Maximum Impact\nThe missing rate limiting enables potential credential stuffing and brute‑force attacks against user accounts. However, the proof does not demonstrate successful account compromise or password discovery; only the absence of rate limiting is confirmed.\n\n## Proof of Exploitation\nSending 25 rapid HTTP requests to http://host.docker.internal:3000/login (using the vulnerable parameter `no-rate-limiting`) and observing that the server does not return a 429 Too Many Requests status proves the missing rate limiting.\n\n## Reproduction Steps\n1. Ensure you can reach `host.docker.internal:3000` from your execution environment.  \n2. Use a tool such as `curl` to issue 25 requests to the login endpoint in quick succession. For example, the following one‑liner sends 25 POST requests with the vulnerable parameter (any value is acceptable):\n   ```bash\n   for i in {1..25}; do curl -X POST \"http://host.docker.internal:3000/login?no-rate-limiting=test\" -d \"username=user$i&password=pass$i\" & done\n   ```  \n(The exact request method and parameters are not critical; any request that reaches the login endpoint with the `no-rate-limiting` parameter exercises the vulnerability.)  \n3. After the requests have been sent, inspect the HTTP responses. The evidence confirms that none of the 25 requests triggered a 429 status code, indicating the server did not enforce rate limiting.  \n4. The captured detection notes (nuclei template: `no-rate-limiting`) record this behavior, providing the proof that the endpoint accepted the rapid requests without throttling.",
+      "llm_reproduction_steps": [
+        "1. Ensure you can reach `host.docker.internal:3000` from your execution environment.",
+        "2. Use a tool such as `curl` to issue 25 requests to the login endpoint in quick succession. For example, the following one‑liner sends 25 POST requests with the vulnerable parameter (any value is acceptable):",
+        "```bash",
+        "for i in {1..25}; do curl -X POST \"http://host.docker.internal:3000/login?no-rate-limiting=test\" -d \"username=user$i&password=pass$i\" & done",
+        "```",
+        "(The exact request method and parameters are not critical; any request that reaches the login endpoint with the `no-rate-limiting` parameter exercises the vulnerability.)",
+        "3. After the requests have been sent, inspect the HTTP responses. The evidence confirms that none of the 25 requests triggered a 429 status code, indicating the server did not enforce rate limiting.",
+        "4. The captured detection notes (nuclei template: `no-rate-limiting`) record this behavior, providing the proof that the endpoint accepted the rapid requests without throttling."
+      ],
+      "poc_enrichment_provenance": "llm",
+      "cvss_score": 9.8,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_rationale": "The login endpoint lacks rate limiting, allowing an attacker to",
+      "cve": null,
+      "validator_notes": "**CVSS Analysis**:\n- **Severity**: CRITICAL (9.8)\n- **Vector**: `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H`\n- **Rationale**: The login endpoint lacks rate limiting, allowing an attacker to"
+    }
+  ]
+}

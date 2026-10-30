@@ -1,0 +1,180 @@
+{
+  "url": "http://host.docker.internal:3000",
+  "infrastructure": [],
+  "frameworks": [],
+  "languages": [],
+  "servers": [],
+  "cms": [],
+  "waf": [],
+  "cdn": [],
+  "tech_tags": [],
+  "misconfigurations": [
+    {
+      "name": "Missing: Strict-Transport-Security (HSTS)",
+      "severity": "low",
+      "description": "Missing HSTS header -- site vulnerable to protocol downgrade and man-in-the-middle attacks",
+      "tags": [
+        "misconfig",
+        "headers",
+        "security"
+      ],
+      "template_id": "security-headers-hsts",
+      "matched_at": "http://host.docker.internal:3000"
+    },
+    {
+      "name": "Missing: Content-Security-Policy (CSP)",
+      "severity": "low",
+      "description": "Missing Content-Security-Policy header -- no restrictions on resource loading, increasing XSS impact",
+      "tags": [
+        "misconfig",
+        "headers",
+        "security"
+      ],
+      "template_id": "security-headers-csp",
+      "matched_at": "http://host.docker.internal:3000"
+    },
+    {
+      "name": "Missing: X-XSS-Protection",
+      "severity": "low",
+      "description": "Missing X-XSS-Protection header -- legacy browsers lack reflected XSS filter",
+      "tags": [
+        "misconfig",
+        "headers",
+        "security"
+      ],
+      "template_id": "security-headers-xxp",
+      "matched_at": "http://host.docker.internal:3000"
+    },
+    {
+      "name": "Missing: Referrer-Policy",
+      "severity": "low",
+      "description": "Missing Referrer-Policy header -- sensitive URL paths may leak to third parties via Referer header",
+      "tags": [
+        "misconfig",
+        "headers",
+        "security"
+      ],
+      "template_id": "security-headers-rp",
+      "matched_at": "http://host.docker.internal:3000"
+    },
+    {
+      "name": "Missing: Permissions-Policy",
+      "severity": "low",
+      "description": "Missing Permissions-Policy header -- browser features (camera, microphone, geolocation) unrestricted",
+      "tags": [
+        "misconfig",
+        "headers",
+        "security"
+      ],
+      "template_id": "security-headers-pp",
+      "matched_at": "http://host.docker.internal:3000"
+    },
+    {
+      "name": "No Rate Limiting on /login",
+      "severity": "medium",
+      "description": "Authentication endpoint http://host.docker.internal:3000/login accepted 25 rapid requests without returning 429. Missing rate limiting enables credential brute-force and stuffing attacks.",
+      "tags": [
+        "misconfig",
+        "rate-limiting",
+        "authentication",
+        "security"
+      ],
+      "template_id": "no-rate-limiting",
+      "matched_at": "http://host.docker.internal:3000/login"
+    },
+    {
+      "name": "Admin Endpoint Accessible Without Auth: /admin",
+      "severity": "high",
+      "description": "Administrative endpoint http://host.docker.internal:3000/admin is accessible without authentication (returned HTTP 200 with 9393 bytes). This may expose sensitive data, debug info, or admin functionality.",
+      "tags": [
+        "misconfig",
+        "access-control",
+        "admin",
+        "security"
+      ],
+      "template_id": "broken-access-control-admin",
+      "matched_at": "http://host.docker.internal:3000/admin"
+    },
+    {
+      "name": "Admin Endpoint Accessible Without Auth: /admin/dashboard",
+      "severity": "high",
+      "description": "Administrative endpoint http://host.docker.internal:3000/admin/dashboard is accessible without authentication (returned HTTP 200 with 9393 bytes). This may expose sensitive data, debug info, or admin functionality.",
+      "tags": [
+        "misconfig",
+        "access-control",
+        "admin",
+        "security"
+      ],
+      "template_id": "broken-access-control-admin",
+      "matched_at": "http://host.docker.internal:3000/admin/dashboard"
+    },
+    {
+      "name": "Admin Endpoint Accessible Without Auth: /debug",
+      "severity": "high",
+      "description": "Administrative endpoint http://host.docker.internal:3000/debug is accessible without authentication (returned HTTP 200 with 9393 bytes). This may expose sensitive data, debug info, or admin functionality.",
+      "tags": [
+        "misconfig",
+        "access-control",
+        "admin",
+        "security"
+      ],
+      "template_id": "broken-access-control-admin",
+      "matched_at": "http://host.docker.internal:3000/debug"
+    },
+    {
+      "name": "Admin Endpoint Accessible Without Auth: /internal",
+      "severity": "high",
+      "description": "Administrative endpoint http://host.docker.internal:3000/internal is accessible without authentication (returned HTTP 200 with 9393 bytes). This may expose sensitive data, debug info, or admin functionality.",
+      "tags": [
+        "misconfig",
+        "access-control",
+        "admin",
+        "security"
+      ],
+      "template_id": "broken-access-control-admin",
+      "matched_at": "http://host.docker.internal:3000/internal"
+    },
+    {
+      "name": "Admin Endpoint Accessible Without Auth: /actuator",
+      "severity": "high",
+      "description": "Administrative endpoint http://host.docker.internal:3000/actuator is accessible without authentication (returned HTTP 200 with 9393 bytes). This may expose sensitive data, debug info, or admin functionality.",
+      "tags": [
+        "misconfig",
+        "access-control",
+        "admin",
+        "security"
+      ],
+      "template_id": "broken-access-control-admin",
+      "matched_at": "http://host.docker.internal:3000/actuator"
+    },
+    {
+      "name": "Admin Endpoint Accessible Without Auth: /actuator/health",
+      "severity": "high",
+      "description": "Administrative endpoint http://host.docker.internal:3000/actuator/health is accessible without authentication (returned HTTP 200 with 9393 bytes). This may expose sensitive data, debug info, or admin functionality.",
+      "tags": [
+        "misconfig",
+        "access-control",
+        "admin",
+        "security"
+      ],
+      "template_id": "broken-access-control-admin",
+      "matched_at": "http://host.docker.internal:3000/actuator/health"
+    },
+    {
+      "name": "Admin Endpoint Accessible Without Auth: /admin/settings",
+      "severity": "high",
+      "description": "Administrative endpoint http://host.docker.internal:3000/admin/settings is accessible without authentication (returned HTTP 200 with 9393 bytes). This may expose sensitive data, debug info, or admin functionality.",
+      "tags": [
+        "misconfig",
+        "access-control",
+        "admin",
+        "security"
+      ],
+      "template_id": "broken-access-control-admin",
+      "matched_at": "http://host.docker.internal:3000/admin/settings"
+    }
+  ],
+  "js_vulnerabilities": [],
+  "raw_tech_findings": [],
+  "raw_vuln_findings": []
+}

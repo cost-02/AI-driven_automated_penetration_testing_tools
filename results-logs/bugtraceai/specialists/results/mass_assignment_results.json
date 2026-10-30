@@ -1,0 +1,15 @@
+{
+  "agent": "MassAssignmentAgent",
+  "timestamp": "2026-10-07T17:18:11.581294",
+  "scan_context": "1",
+  "phase_a": {
+    "wet_count": 2,
+    "dry_count": 3,
+    "dedup_method": "endpoint_normalization"
+  },
+  "phase_b": {
+    "validated_count": 0,
+    "total_findings": 0
+  },
+  "findings": []
+}

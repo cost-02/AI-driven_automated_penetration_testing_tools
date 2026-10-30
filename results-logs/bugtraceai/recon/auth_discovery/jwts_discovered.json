@@ -1,0 +1,6 @@
+{
+  "target": "http://host.docker.internal:3000",
+  "timestamp": "2026-10-07T17:15:14.210578",
+  "total_jwts": 0,
+  "jwts": []
+}

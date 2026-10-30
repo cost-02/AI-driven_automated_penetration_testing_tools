@@ -1,0 +1,16 @@
+{
+  "agent": "XSSAgentV4",
+  "timestamp": "2026-10-07T17:20:43.435608",
+  "scan_context": "1",
+  "phase_a": {
+    "wet_count": 2,
+    "dry_count": 2,
+    "dedup_method": "llm_context_aware"
+  },
+  "phase_b": {
+    "validated_count": 0,
+    "total_findings": 0
+  },
+  "findings": [],
+  "_encoding_note": "payload fields with special chars are base64 encoded as payload_b64"
+}

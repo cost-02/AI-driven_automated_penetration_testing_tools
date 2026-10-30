@@ -1,0 +1,49 @@
+{
+  "specialist": "header_injection",
+  "wet_count": 1,
+  "dry_count": 2,
+  "findings": [
+    {
+      "url": "http://host.docker.internal:3000",
+      "parameter": "post_body",
+      "finding": {
+        "type": "Header Injection",
+        "parameter": "post_body",
+        "url": "http://host.docker.internal:3000",
+        "severity": "High",
+        "fp_confidence": 0.9,
+        "confidence_score": 0.9,
+        "votes": 5,
+        "skeptical_score": 8,
+        "reasoning": "Auto-dispatch: Reflecting parameters detected. HeaderInjectionAgent will test for CRLF/response splitting.",
+        "payload": "",
+        "evidence": "Auto-dispatched for parameter coverage",
+        "_source_file": "auto_dispatch",
+        "_auto_dispatched": true
+      },
+      "scan_context": "1"
+    },
+    {
+      "url": "http://host.docker.internal:3000/redirect",
+      "parameter": "to",
+      "context": "unknown",
+      "finding": {
+        "type": "Header Injection",
+        "parameter": "post_body",
+        "url": "http://host.docker.internal:3000",
+        "severity": "High",
+        "fp_confidence": 0.9,
+        "confidence_score": 0.9,
+        "votes": 5,
+        "skeptical_score": 8,
+        "reasoning": "Auto-dispatch: Reflecting parameters detected. HeaderInjectionAgent will test for CRLF/response splitting.",
+        "payload": "",
+        "evidence": "Auto-dispatched for parameter coverage",
+        "_source_file": "auto_dispatch",
+        "_auto_dispatched": true
+      },
+      "scan_context": "1",
+      "_discovered": true
+    }
+  ]
+}

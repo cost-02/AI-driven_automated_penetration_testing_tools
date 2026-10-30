@@ -1,0 +1,19 @@
+{
+  "agent": "HeaderInjectionAgent",
+  "vulnerability_type": "HEADER_INJECTION",
+  "scan_context": "1",
+  "phase_a": {
+    "wet_count": 0,
+    "dry_count": 2,
+    "deduplication_method": "LLM + fingerprint fallback (header name-only)"
+  },
+  "phase_b": {
+    "exploited_count": 2,
+    "validated_count": 0
+  },
+  "findings": [],
+  "summary": {
+    "total_validated": 0,
+    "headers_found": []
+  }
+}

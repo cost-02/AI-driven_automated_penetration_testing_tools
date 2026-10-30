@@ -1,0 +1,19 @@
+{
+  "agent": "SQLiAgent",
+  "scan_id": "1",
+  "timestamp": "2026-10-07T17:19:18.877089Z",
+  "phase_a": {
+    "wet_count": 5,
+    "dry_count": 5,
+    "duplicates_removed": 0,
+    "analysis_duration_s": 0
+  },
+  "phase_b": {
+    "attacks_executed": 5,
+    "validated_confirmed": 0,
+    "validated_likely": 0,
+    "pending_validation": 0,
+    "exploitation_duration_s": 0
+  },
+  "findings": []
+}

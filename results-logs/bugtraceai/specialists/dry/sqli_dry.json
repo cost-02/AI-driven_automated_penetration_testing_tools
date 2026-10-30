@@ -1,0 +1,42 @@
+{
+  "specialist": "sqli",
+  "wet_count": 1,
+  "dry_count": 5,
+  "findings": [
+    {
+      "url": "http://host.docker.internal:3000",
+      "parameter": "post_body",
+      "rationale": "Auto-dispatched SQLi finding with high confidence (0.9) detected in POST body parameter. Generic-compatible error-based and union techniques applicable for unknown database backend.",
+      "attack_priority": 1,
+      "recommended_technique": "error_based"
+    },
+    {
+      "url": "http://host.docker.internal:3000",
+      "parameter": "to",
+      "rationale": "Autonomously discovered parameter at same endpoint. Generic discovery suggests potential injection point worth testing with boolean-based techniques for unknown database.",
+      "attack_priority": 3,
+      "recommended_technique": "boolean"
+    },
+    {
+      "url": "http://host.docker.internal:3000",
+      "parameter": "Header: X-Forwarded-For",
+      "rationale": "Header-based parameter discovered autonomously. Generic header injection testing applicable across all web servers. Time-based techniques suitable for blind SQLi detection.",
+      "attack_priority": 2,
+      "recommended_technique": "time_based"
+    },
+    {
+      "url": "http://host.docker.internal:3000",
+      "parameter": "Header: Referer",
+      "rationale": "Header parameter discovered autonomously. Generic header testing scope applies. Error-based techniques effective for header-based SQLi in unknown database environments.",
+      "attack_priority": 2,
+      "recommended_technique": "error_based"
+    },
+    {
+      "url": "http://host.docker.internal:3000",
+      "parameter": "Header: User-Agent",
+      "rationale": "Header parameter discovered autonomously. Generic header injection testing scope. Boolean-based techniques suitable for detecting blind SQLi via User-Agent header in unknown database backend.",
+      "attack_priority": 2,
+      "recommended_technique": "boolean"
+    }
+  ]
+}

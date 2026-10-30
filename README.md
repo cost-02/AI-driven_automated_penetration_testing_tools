@@ -219,7 +219,7 @@ results-logs\failed-runs\strix
 
 ### 6.2 PentestGPT (Modalità Human-in-the-Loop)
 
-*Nota metodologica:* Le esecuzioni fully-autonomous con i modelli locali (7B e 14B) hanno mostrato fallimenti sistematici in fase di reconnaissance a causa del collasso del tool-calling. La sessione di successo documentata in questa sperimentazione (Cap. 4.2.3 della tesi) è stata pertanto condotta in modalità **Human-in-the-Loop (HITL)**. In questa configurazione, l'operatore umano agisce come *Parsing Module*, eseguendo i comandi suggeriti dall'agente e restituendo output sanitizzati per evitare il *context overflow* del modello.
+*Nota metodologica:* Le esecuzioni non guidate con i modelli locali (7B e 14B) hanno mostrato interruzioni sistematiche in fase di reconnaissance (anticipazione di scenari SQLi/XSS senza evidenze sul 14B; piani ridondanti sul 7B). Le sessioni di successo documentate in questa sperimentazione (Cap. 4.2.3 della tesi) sono state pertanto condotte in modalità **Human-in-the-Loop (HITL)**. In questa configurazione, l'operatore umano agisce come *Parsing Module*, eseguendo i comandi suggeriti dall'agente e restituendo output sanitizzati per evitare il *context overflow* del modello.
 
 Creare e attivare un ambiente virtuale Python:
 
@@ -234,7 +234,7 @@ Installare PentestGPT:
 pip install pentestgpt
 ```
 
-Configurare le variabili d’ambiente per Ollama:
+Configurare le variabili d’ambiente per Ollama (esempio con modello 14B, replicabile con `qwen2.5-coder:7b`):
 
 ```powershell
 $env:OPENAI_API_KEY="ollama"
@@ -254,7 +254,7 @@ pentestgpt
 3. **Sanitizzare l'output** (rimuovendo il rumore esadecimale, gli header irrilevanti o il codice HTML grezzo) per preservare il contesto del modello.
 4. Reinserire l'output pulito nel tool selezionando l'opzione `user-comments` quando richiesto dal parser.
 
-*Artefatto prodotto:* La sessione guidata di successo è salvata integralmente nel file di log `\results-logs\pentestgpt\14b_ps`. Questo artefatto documenta la validazione della vulnerabilità di *Information Disclosure* su `/ftp/acquisitions.md` e il successivo fenomeno di "meta-loop" del modello 14B nella fase finale di generazione del report, come discusso nella Sezione 4.4.2 della documentazione.
+*Artefatto prodotto:* La sessione guidata di successo con il modello 14B è salvata integralmente nel file di log `\results-logs\pentestgpt\14b_ps`. Questo artefatto documenta la validazione della vulnerabilità di *Information Disclosure / Sensitive Data Exposure* su `/ftp/acquisitions.md` e il successivo fenomeno di "meta-loop" del modello 14B nella fase finale di generazione del report (in cui il PTT viene marcato come completato ma il corpo del report in Markdown non viene generato). La replica della medesima sessione guidata con il modello 7B ha confermato la vulnerabilità ma ha evidenziato fenomeni precoci di *amnesia contestuale* e *context bleeding*, con rottura del protocollo di stato e regressione a task di ricognizione già completati, come discusso nelle Sezioni 4.2.3 e 4.4.2 della documentazione.
 
 ---
 
@@ -288,7 +288,7 @@ Avviare Shannon:
    -u "[http://host.docker.internal:3000](http://host.docker.internal:3000)" \
    -r "$HOME/progetti/juice-shop-src-shannon-test" \
    -w "local-qwen25-7b" \
-   -m "./configs/ollama_7b.json" \
+   --models-config "./configs/ollama_7b.json" \
    --follow
 ```
 
@@ -482,9 +482,12 @@ La tabella seguente riassume l'esito operativo della sperimentazione per ciascun
 
 | **Tool** | **Provider / Modello** | **Risultato atteso (confermato dalla sperimentazione)** |
 | :--- | :--- | :--- |
-| **BugTraceAI-CLI** | OpenRouter (`cohere/north-mini-code:free`) | **2 vulnerabilità confermate.** Il meccanismo di validazione incrociata ha scartato au…ed`. |
-| **PentAGI** | Ollama (`qwen2.5-coder:7b`) | **Fallita** in fase di reconnaissance. L'orchestratore ha rilevato errori sistematici di formato (`got message instead of tool call`), con il modello che rispondeva in formato discorsivo invece che strutturato. |
-| **Shannon** | Ollama (`qwen2.5-coder:7b`) | **Fallita** per errori bloccanti di validazione dell’output (`OUTPUT_VALIDATION_FAILED`) nei nodi di exploitation, impedendo la generazione dei Proof-of-Concept richiesti dal framework. |
+| **BugTraceAI-CLI** | OpenRouter (`cohere/north-mini-code:free`) | **Completata (2 vulnerabilità confermate):** assenza di rate limiting su `/login` (*Missing Rate Limiting*) e mancanza di *security headers*. Il meccanismo di validazione incrociata (tramite template Nuclei) ha scartato automaticamente 4 candidati su 6 iniziali, azzerando i falsi positivi nel report finale. |
+| **CAI** | Ollama (`qwen2.5-coder:7b` / `14b`) | **Completata con intervento (1 vulnerabilità confermata):** individuazione del *directory listing* pubblico su `/ftp` e dei metadati del file `/ftp/incident-support.kdbx` (severità *Medium*) mediante analisi assistita con `redteam_agent` e guardrail attivi. Richiede revisione umana per filtrare inferenze non supportate (es. ipotesi di pannello admin dedotta dall'header `X-Recruiting` col 14B) o etichettatura discontinua (col 7B). |
+| **PentestGPT** | Ollama (`qwen2.5-coder:7b` / `14b`) | **Completata in modalità guidata HITL (1 vulnerabilità confermata):** *Information Disclosure / Sensitive Data Exposure* tramite accesso non autenticato a `/ftp/acquisitions.md` (le sessioni non guidate si sono invece interrotte in fase di ricognizione). Nella fase finale di generazione del report, il 14B è entrato in un *meta-loop* omettendo il corpo del report in Markdown, mentre il 7B ha mostrato *amnesia contestuale* e rottura del protocollo di stato. |
+| **Strix** | Ollama (`qwen2.5-coder:7b` / `14b`) | **Fallita (0 finding)** in fase di reconnaissance a causa del collasso del tool-calling e del raggiungimento di `MaxTurnsExceeded`. I modelli hanno serializzato la struttura JSON nel campo di testo libero (`content`) anziché invocare nativamente le funzioni API esposte dall'orchestratore. |
+| **PentAGI** | Ollama (`qwen2.5-coder:7b` / `14b`) | **Fallita (0 finding)** in fase di reconnaissance. L'orchestratore ha rilevato errori sistematici di formato (`got message instead of tool call`), con il modello che rispondeva in formato discorsivo invece che strutturato. |
+| **Shannon** | Ollama (`qwen2.5-coder:7b` / `14b`) | **Fallita (0 finding)** per errori bloccanti di validazione dell’output (`OUTPUT_VALIDATION_FAILED`) nei nodi di exploitation, impedendo la generazione dei Proof-of-Concept funzionanti richiesti dal framework. |
 
 ---
 

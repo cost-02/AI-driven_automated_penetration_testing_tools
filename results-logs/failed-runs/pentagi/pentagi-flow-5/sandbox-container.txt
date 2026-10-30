@@ -1,0 +1,2 @@
+CONTAINER ID   IMAGE           COMMAND               CREATED          STATUS          PORTS                                  NAMES
+d7ca8278fd23   debian:latest   "tail -f /dev/null"   15 minutes ago   Up 15 minutes   0.0.0.0:28010-28011->28010-28011/tcp   pentagi-terminal-5

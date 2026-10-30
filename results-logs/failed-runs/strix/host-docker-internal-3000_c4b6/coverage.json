@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-06 15:17:17 UTC",
+  "run_id": "host-docker-internal-3000_c4b6",
+  "run_name": "host-docker-internal-3000_c4b6",
+  "scope": {
+    "targets": [
+      {
+        "type": "web_application",
+        "details": {
+          "target_url": "http://host.docker.internal:3000"
+        },
+        "original": "http://host.docker.internal:3000"
+      }
+    ],
+    "scan_mode": "quick",
+    "scope_mode": "auto",
+    "diff_scope": {
+      "active": false,
+      "mode": "auto"
+    },
+    "instruction": "Authorized local laboratory only. Test only http://host.docker.internal:3000. The OWASP Juice Shop container is already running. Do not create, pull, start, stop, or remove Docker containers. Do not contact any external host. Verify HTTP reachability, enumerate public routes, perform low-impact checks for SQL injection, reflected XSS, and authentication weaknesses, document confirmed evidence, then call finish_scan."
+  },
+  "summary": {
+    "surfaces_reviewed": 0,
+    "outcomes": {},
+    "findings_filed": 0,
+    "gaps": 1
+  },
+  "machine_observed": {
+    "agents": [
+      {
+        "agent_id": "8d5f87d3",
+        "agent_name": "Root Agent",
+        "status": "failed",
+        "skills": [],
+        "task": "\n\nURLs: - http://host.docker.internal:3000\n\nSpecial instructions: Authorized local laboratory only. Test only http://host.docker.internal:3000. The OWASP Juice Shop container is already running. Do not create, pull, start, stop, or remove Docker containers. Do not contact any external host. Verify HTTP reachability, enumerate public routes, perform low-impact checks for SQL injection, reflected XSS, and authentication weaknesses, document confirmed evidence, then call finish_scan.",
+        "is_root": true
+      }
+    ],
+    "skills_exercised": [],
+    "findings_filed": 0,
+    "source": "runtime"
+  },
+  "completeness": {
+    "complete": false,
+    "scan_status": "failed",
+    "exit_reason": "error",
+    "caveats": [
+      "The scan ended with status 'failed' rather than completing, so coverage reflects only the work finished before it stopped.",
+      "The run terminated via 'error' rather than the root agent finishing, so remaining scope was not reached."
+    ]
+  },
+  "entries": [],
+  "gaps": [
+    {
+      "kind": "agent_recorded_no_coverage",
+      "agent_name": "Root Agent",
+      "detail": "Root Agent ran (status: failed) without recording any coverage. Whatever it examined is absent from this record."
+    }
+  ]
+}

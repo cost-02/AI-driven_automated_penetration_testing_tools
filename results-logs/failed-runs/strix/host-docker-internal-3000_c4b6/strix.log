@@ -1,0 +1,406 @@
+2026-10-06 17:15:43.435 INFO    host-docker-internal-3000_c4b6 - strix.core.runner: Starting Strix scan host-docker-internal-3000_c4b6 (image=ghcr.io/usestrix/strix-sandbox:1.3.0, max_turns=20, interactive=False, run_dir=C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6)
+2026-10-06 17:15:43.435 INFO    host-docker-internal-3000_c4b6 - strix.config.models: OpenAI API route for openai/qwen2.5-coder:7b: chat_completions
+2026-10-06 17:15:43.435 INFO    host-docker-internal-3000_c4b6 - strix.core.runner: LLM model resolved: openai/qwen2.5-coder:7b
+2026-10-06 17:15:43.436 INFO    host-docker-internal-3000_c4b6 - strix.core.runner: Bringing up sandbox session for scan host-docker-internal-3000_c4b6
+2026-10-06 17:15:43.436 DEBUG   host-docker-internal-3000_c4b6 - strix.runtime.backends: Selected sandbox backend: docker
+2026-10-06 17:15:43.436 INFO    host-docker-internal-3000_c4b6 - strix.runtime.session_manager: Creating sandbox session for scan host-docker-internal-3000_c4b6 (backend=docker, image=ghcr.io/usestrix/strix-sandbox:1.3.0)
+2026-10-06 17:15:43.545 DEBUG   host-docker-internal-3000_c4b6 - strix.runtime.docker_client: Creating sandbox container: image=ghcr.io/usestrix/strix-sandbox:1.3.0 caps=['NET_ADMIN', 'NET_RAW'] exposed_ports=[48080]
+2026-10-06 17:15:43.694 INFO    host-docker-internal-3000_c4b6 - strix.runtime.docker_client: Sandbox container created: id=d17a8b962300 image=ghcr.io/usestrix/strix-sandbox:1.3.0
+2026-10-06 17:15:44.432 DEBUG   host-docker-internal-3000_c4b6 - strix.runtime.session_manager: Caido host endpoint resolved: http://127.0.0.1:40758
+2026-10-06 17:15:44.432 INFO    host-docker-internal-3000_c4b6 - strix.runtime.session_manager: Sandbox session for scan host-docker-internal-3000_c4b6 ready and cached
+2026-10-06 17:15:44.432 INFO    host-docker-internal-3000_c4b6 - strix.core.runner: Sandbox ready for scan host-docker-internal-3000_c4b6
+2026-10-06 17:15:44.435 DEBUG   host-docker-internal-3000_c4b6 - strix.skills: Loaded skill: scan_modes/quick -> quick
+2026-10-06 17:15:44.436 DEBUG   host-docker-internal-3000_c4b6 - strix.skills: Loaded skill: tooling/agent_browser -> agent_browser
+2026-10-06 17:15:44.438 DEBUG   host-docker-internal-3000_c4b6 - strix.skills: Loaded skill: tooling/python -> python
+2026-10-06 17:15:44.439 DEBUG   host-docker-internal-3000_c4b6 - strix.skills: Loaded skill: analysis/counterevidence -> counterevidence
+2026-10-06 17:15:44.440 DEBUG   host-docker-internal-3000_c4b6 - strix.skills: Loaded skill: analysis/severity_calibration -> severity_calibration
+2026-10-06 17:15:44.441 DEBUG   host-docker-internal-3000_c4b6 - strix.skills: Loaded skill: coordination/root_agent -> root_agent
+2026-10-06 17:15:44.441 DEBUG   host-docker-internal-3000_c4b6 - strix.skills: load_skills: 6 skill(s) resolved
+2026-10-06 17:15:44.486 DEBUG   host-docker-internal-3000_c4b6 - strix.agents.prompt: render_system_prompt: scan_mode=quick root=True whitebox=False skills=6 prompt_len=103570
+2026-10-06 17:15:44.487 INFO    host-docker-internal-3000_c4b6 - strix.agents.factory: Built root agent 'Root Agent' (skills=0, tools=44, scan_mode=quick, whitebox=False)
+2026-10-06 17:15:44.487 INFO    host-docker-internal-3000_c4b6 - strix.core.agents: agent.register 8d5f87d3 (Root Agent) parent=-
+2026-10-06 17:15:44.536 INFO    host-docker-internal-3000_c4b6 - strix.runtime.caido_bootstrap: Bootstrapping Caido client (host=http://127.0.0.1:40758, container=http://127.0.0.1:48080)
+2026-10-06 17:15:44.565 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:15:44.566 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:15:44.566 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:15:44.578 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:15:44.578 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:15:44.578 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:15:44.580 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:15:44.582 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:15:44.585 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:15:44.942 INFO    host-docker-internal-3000_c4b6 - strix.runtime.caido_bootstrap: Caido project selected: d0cbc29e-d965-4f3e-9d42-67fa1da92626
+2026-10-06 17:15:56.642 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=12063 ttft_ms=10828 req_bytes=232974 res_bytes=690 finish=- in=2050 out=31 cached=4 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:15:56.643 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:15:56.667 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:15:56.669 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:15:56.670 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:15:56.670 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:15:56.673 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:15:56.696 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:15:56.696 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (1/20): ```json {"name": "exec_command", "arguments": {"cmd": "curl http://host.docker.internal:3000"}} ```
+2026-10-06 17:15:56.721 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:15:56.722 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:15:56.722 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:15:56.734 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:15:56.734 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:15:56.734 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:15:56.734 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:15:56.737 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:15:56.738 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:08.141 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=11406 ttft_ms=10467 req_bytes=233748 res_bytes=673 finish=- in=2050 out=23 cached=4 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:08.141 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:08.165 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:08.167 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:08.168 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:08.169 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:08.170 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:08.186 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:08.187 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (2/20): ```json {"name": "view_image", "arguments": {"path": "assessment_report.png"}} ```
+2026-10-06 17:16:08.208 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:08.209 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:08.210 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:08.221 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:08.221 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:08.221 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:08.222 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:08.223 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:08.224 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:09.842 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=1625 ttft_ms=1078 req_bytes=234504 res_bytes=633 finish=- in=2050 out=14 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:09.842 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:09.863 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:09.865 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:09.866 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:09.867 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:09.868 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:09.888 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:09.889 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (3/20): {"name": "wait_for_agents", "arguments": {}}
+2026-10-06 17:16:09.909 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.context_budget: No LiteLLM model info for 'openai/qwen2.5-coder:7b'; using configured fallbacks
+2026-10-06 17:16:10.023 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:10.024 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:10.024 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:10.035 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:10.035 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:10.035 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:10.036 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:10.038 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:10.040 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:11.748 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=1702 ttft_ms=1202 req_bytes=235217 res_bytes=629 finish=- in=2050 out=13 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:11.748 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:11.770 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:11.772 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:11.773 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:11.773 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:11.774 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:11.793 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:11.794 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (4/20): {"name": "finish_scan", "arguments": {}}
+2026-10-06 17:16:11.834 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:11.834 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:11.835 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:11.845 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:11.845 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:11.845 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:11.846 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:11.848 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:11.849 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:13.552 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=1703 ttft_ms=1422 req_bytes=235926 res_bytes=609 finish=- in=2050 out=8 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:13.552 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:13.580 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:13.582 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:13.583 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:13.583 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:13.584 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:13.600 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:13.600 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (5/20): {"name": "finish_scan"}
+2026-10-06 17:16:13.634 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:13.635 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:13.635 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:13.646 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:13.646 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:13.646 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:13.647 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:13.649 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:13.650 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:16.211 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=2562 ttft_ms=1546 req_bytes=236616 res_bytes=683 finish=- in=2050 out=25 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:16.211 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:16.233 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:16.235 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:16.236 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:16.236 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:16.238 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:16.257 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:16.258 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (6/20): {"name": "exec_command", "arguments": {"cmd": "echo 'Continuing the scan as requested.'"}}
+2026-10-06 17:16:16.291 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:16.292 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:16.292 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:16.304 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:16.304 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:16.304 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:16.305 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:16.306 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:16.307 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:18.543 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=2234 ttft_ms=1687 req_bytes=237379 res_bytes=633 finish=- in=2050 out=14 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:18.544 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:18.567 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:18.569 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:18.570 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:18.570 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:18.571 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:18.592 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:18.593 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (7/20): {"name": "wait_for_agents", "arguments": {}}
+2026-10-06 17:16:18.632 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:18.633 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:18.633 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:18.644 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:18.644 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:18.644 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:18.645 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:18.647 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:18.648 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:21.051 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=2391 ttft_ms=1843 req_bytes=238092 res_bytes=633 finish=- in=2050 out=14 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:21.051 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:21.077 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:21.078 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:21.080 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:21.080 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:21.081 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:21.100 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:21.101 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (8/20): {"name": "wait_for_agents", "arguments": {}}
+2026-10-06 17:16:21.137 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:21.137 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:21.137 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:21.149 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:21.150 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:21.150 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:21.151 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:21.152 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:21.153 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:24.503 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=3343 ttft_ms=2046 req_bytes=238805 res_bytes=720 finish=- in=2050 out=32 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:24.503 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:24.527 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:24.529 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:24.529 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:24.530 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:24.531 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:24.552 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:24.553 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (9/20): ```json {"name": "exec_command", "arguments": {"cmd": "echo 'Scanning is complete and awaiting further instructions.'"}}  ```
+2026-10-06 17:16:24.592 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:24.593 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:24.593 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:24.604 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:24.604 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:24.604 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:24.605 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:24.606 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:24.608 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:27.345 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=2733 ttft_ms=2233 req_bytes=239605 res_bytes=628 finish=- in=2050 out=13 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:27.345 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:27.368 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:27.370 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:27.371 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:27.371 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:27.372 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:27.388 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:27.389 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (10/20): {"name": "finish_scan", "arguments": {}}
+2026-10-06 17:16:27.427 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:27.428 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:27.428 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:27.439 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:27.439 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:27.439 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:27.440 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:27.441 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:27.443 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:39.944 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=12514 ttft_ms=11953 req_bytes=240315 res_bytes=630 finish=- in=2050 out=14 cached=4 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:39.944 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:39.966 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:39.968 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:39.969 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:39.969 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:39.971 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:39.991 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:39.992 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (11/20): {"name": "wait_for_agents", "arguments": {}}
+2026-10-06 17:16:40.030 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:40.032 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:40.032 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:40.042 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:40.043 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:40.043 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:40.044 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:40.045 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:40.046 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:43.358 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=3312 ttft_ms=2593 req_bytes=241029 res_bytes=647 finish=- in=2050 out=18 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:43.358 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:43.383 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:43.385 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:43.386 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:43.386 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:43.387 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:43.404 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:43.405 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (12/20): ```json {"name": "wait_for_agents", "arguments": {}} ```
+2026-10-06 17:16:43.444 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:43.446 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:43.446 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:43.459 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:43.459 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:43.459 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:43.460 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:43.462 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:43.463 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:46.715 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=3250 ttft_ms=2703 req_bytes=241757 res_bytes=632 finish=- in=2050 out=14 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:46.715 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:46.739 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:46.741 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:46.742 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:46.742 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:46.743 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:46.763 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:46.764 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (13/20): {"name": "wait_for_agents", "arguments": {}}
+2026-10-06 17:16:46.801 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:46.802 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:46.802 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:46.813 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:46.814 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:46.814 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:46.815 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:46.816 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:46.818 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:50.233 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=3422 ttft_ms=2875 req_bytes=242470 res_bytes=633 finish=- in=2050 out=14 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:50.234 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:50.256 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:50.258 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:50.258 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:50.259 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:50.260 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:50.282 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:50.284 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (14/20): {"name": "wait_for_agents", "arguments": {}}
+2026-10-06 17:16:50.322 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:50.323 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:50.323 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:50.334 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:50.335 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:50.335 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:50.336 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:50.337 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:50.338 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:53.880 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=3531 ttft_ms=2983 req_bytes=243184 res_bytes=632 finish=- in=2050 out=14 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:53.880 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:53.903 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:53.905 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:53.906 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:53.906 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:53.907 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:53.927 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:53.928 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (15/20): {"name": "wait_for_agents", "arguments": {}}
+2026-10-06 17:16:53.968 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:53.969 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:53.970 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:53.981 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:53.981 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:53.981 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:53.982 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:53.984 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:53.985 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:16:57.720 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=3733 ttft_ms=3187 req_bytes=243898 res_bytes=631 finish=- in=2050 out=14 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:16:57.720 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:16:57.743 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:16:57.745 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:16:57.746 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:16:57.746 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:16:57.747 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:16:57.764 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:16:57.765 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (16/20): {"name": "wait_for_agents", "arguments": {}}
+2026-10-06 17:16:57.801 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:16:57.802 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:16:57.802 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:57.813 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:57.813 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:16:57.813 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:57.814 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:16:57.815 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:16:57.817 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:17:01.619 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=3812 ttft_ms=3312 req_bytes=244611 res_bytes=629 finish=- in=2050 out=13 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:17:01.620 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:17:01.643 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:17:01.644 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:17:01.645 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:17:01.645 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:17:01.646 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:17:01.668 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:17:01.669 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (17/20): {"name": "finish_scan", "arguments": {}}
+2026-10-06 17:17:01.706 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:17:01.707 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:17:01.707 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:17:01.718 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:17:01.718 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:17:01.718 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:17:01.719 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:17:01.721 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:17:01.722 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:17:05.832 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=4108 ttft_ms=3483 req_bytes=245321 res_bytes=642 finish=- in=2050 out=16 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:17:05.832 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:17:05.857 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:17:05.859 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:17:05.860 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:17:05.860 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:17:05.861 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:17:05.880 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:17:05.882 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (18/20): {     "name": "finish_scan",     "arguments": {} }
+2026-10-06 17:17:05.922 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:17:05.922 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:17:05.923 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:17:05.934 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:17:05.934 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:17:05.934 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:17:05.935 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:17:05.937 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:17:05.938 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:17:10.217 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=4281 ttft_ms=3734 req_bytes=246044 res_bytes=632 finish=- in=2050 out=14 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:17:10.217 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:17:10.240 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:17:10.242 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:17:10.243 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:17:10.244 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:17:10.244 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:17:10.264 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:17:10.265 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (19/20): {"name": "wait_for_agents", "arguments": {}}
+2026-10-06 17:17:10.305 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating trace
+2026-10-06 17:17:10.306 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Setting current trace: no-op
+2026-10-06 17:17:10.306 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:17:10.316 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:17:10.316 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-10-06 17:17:10.316 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:17:10.317 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: No conversation_id available for request
+2026-10-06 17:17:10.319 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Tracing is disabled. Not creating span
+2026-10-06 17:17:10.320 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Calling LLM
+2026-10-06 17:17:14.617 DEBUG   host-docker-internal-3000_c4b6 - strix.llm.request_log: llm_request route=openai provider=openai model=openai/qwen2.5-coder:7b host=localhost outcome=success status=200 request_id=- response_id=- stream=1 duration_ms=4297 ttft_ms=3782 req_bytes=246758 res_bytes=629 finish=- in=2050 out=13 cached=2040 cost=- agent=8d5f87d3 attempt=0
+2026-10-06 17:17:14.617 DEBUG   host-docker-internal-3000_c4b6 - strix.report.usage: LiteLLM cost estimate unavailable for model qwen2.5-coder:7b
+2026-10-06 17:17:14.642 INFO    host-docker-internal-3000_c4b6 - strix.report.coverage: Saved coverage record to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\coverage.json (0 surface(s), 1 gap(s))
+2026-10-06 17:17:14.644 INFO    host-docker-internal-3000_c4b6 - strix.report.sarif: Wrote SARIF 2.1.0 report: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6\findings.sarif (0 results)
+2026-10-06 17:17:14.645 INFO    host-docker-internal-3000_c4b6 - strix.report.state: Essential scan data saved to: C:\Users\Costantino\Documents\progetto_pentest\strix_runs\host-docker-internal-3000_c4b6
+2026-10-06 17:17:14.645 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-10-06 17:17:14.646 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-10-06 17:17:14.663 DEBUG   host-docker-internal-3000_c4b6 - openai.agents: Resetting current trace
+2026-10-06 17:17:14.664 WARNING host-docker-internal-3000_c4b6 - strix.core.execution: agent 8d5f87d3 ended a turn without a lifecycle tool call (interactive=False); forcing tool continuation (20/20): {"name": "finish_scan", "arguments": {}}
+2026-10-06 17:17:14.664 INFO    host-docker-internal-3000_c4b6 - strix.core.agents: agent.status 8d5f87d3=crashed
+2026-10-06 17:17:14.665 ERROR   host-docker-internal-3000_c4b6 - strix.core.runner: Strix scan host-docker-internal-3000_c4b6 failed
+Traceback (most recent call last):
+  File "C:\Users\Costantino\AppData\Local\pipx\pipx\venvs\strix-agent\Lib\site-packages\strix\core\runner.py", line 579, in run_strix_scan
+    result = await run_agent_loop(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Costantino\AppData\Local\pipx\pipx\venvs\strix-agent\Lib\site-packages\strix\core\execution.py", line 207, in run_agent_loop
+    return await _run_agent_loop(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Costantino\AppData\Local\pipx\pipx\venvs\strix-agent\Lib\site-packages\strix\core\execution.py", line 266, in _run_agent_loop
+    result = await _run_until_lifecycle(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Costantino\AppData\Local\pipx\pipx\venvs\strix-agent\Lib\site-packages\strix\core\execution.py", line 597, in _run_until_lifecycle
+    return await _exhausted_recovery(coordinator, agent_id, result, interactive=interactive)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Costantino\AppData\Local\pipx\pipx\venvs\strix-agent\Lib\site-packages\strix\core\execution.py", line 625, in _exhausted_recovery
+    raise MaxTurnsExceeded(
+agents.exceptions.MaxTurnsExceeded: Agent exhausted recovery attempts without calling finish_scan or agent_finish.
+2026-10-06 17:17:14.673 INFO    host-docker-internal-3000_c4b6 - strix.core.agents: agent.status 8d5f87d3=failed
+2026-10-06 17:17:14.675 INFO    host-docker-internal-3000_c4b6 - strix.core.runner: Tearing down sandbox session for scan host-docker-internal-3000_c4b6
+2026-10-06 17:17:15.311 INFO    host-docker-internal-3000_c4b6 - strix.runtime.session_manager: Cleaned up sandbox session for scan host-docker-internal-3000_c4b6
+2026-10-06 17:17:15.312 INFO    host-docker-internal-3000_c4b6 - strix.core.runner: Strix scan host-docker-internal-3000_c4b6 done

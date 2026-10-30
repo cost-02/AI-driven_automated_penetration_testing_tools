@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-06 15:10:16 UTC",
+  "run_id": "host-docker-internal-3000_4d9d",
+  "run_name": "host-docker-internal-3000_4d9d",
+  "scope": {
+    "targets": [
+      {
+        "type": "web_application",
+        "details": {
+          "target_url": "http://host.docker.internal:3000"
+        },
+        "original": "http://localhost:3000"
+      }
+    ],
+    "scan_mode": "quick",
+    "scope_mode": "auto",
+    "diff_scope": {
+      "active": false,
+      "mode": "auto"
+    },
+    "instruction": "Authorized local lab only. Use the already running target at http://host.docker.internal:3000. Do not start or create Docker containers. Verify reachability first. Perform only a short HTTP reconnaissance and record the command output before testing SQL injection, XSS, or authentication. Do not finish before recording evidence."
+  },
+  "summary": {
+    "surfaces_reviewed": 0,
+    "outcomes": {},
+    "findings_filed": 0,
+    "gaps": 1
+  },
+  "machine_observed": {
+    "agents": [
+      {
+        "agent_id": "bf82661b",
+        "agent_name": "Root Agent",
+        "status": "failed",
+        "skills": [],
+        "task": "\n\nURLs: - http://host.docker.internal:3000\n\nSpecial instructions: Authorized local lab only. Use the already running target at http://host.docker.internal:3000. Do not start or create Docker containers. Verify reachability first. Perform only a short HTTP reconnaissance and record the command output before testing SQL injection, XSS, or authentication. Do not finish before recording evidence.",
+        "is_root": true
+      }
+    ],
+    "skills_exercised": [],
+    "findings_filed": 0,
+    "source": "runtime"
+  },
+  "completeness": {
+    "complete": false,
+    "scan_status": "failed",
+    "exit_reason": "error",
+    "caveats": [
+      "The scan ended with status 'failed' rather than completing, so coverage reflects only the work finished before it stopped.",
+      "The run terminated via 'error' rather than the root agent finishing, so remaining scope was not reached."
+    ]
+  },
+  "entries": [],
+  "gaps": [
+    {
+      "kind": "agent_recorded_no_coverage",
+      "agent_name": "Root Agent",
+      "detail": "Root Agent ran (status: failed) without recording any coverage. Whatever it examined is absent from this record."
+    }
+  ]
+}

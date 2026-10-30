@@ -1,0 +1,30 @@
+FASE 2.3 - Shannon con Ollama locale
+
+Ambiente:
+- Shannon eseguito in WSL2
+- Docker Desktop con backend WSL2
+- Target: OWASP Juice Shop locale
+- Ollama su Windows
+- Endpoint: http://host.docker.internal:11434/v1
+
+Modelli testati:
+- qwen2.5-coder:7b
+- qwen2.5-coder:14b
+
+Risultati:
+- Shannon preflight: OK
+- Pre-recon: OK
+- Recon: OK
+- Tool calling OpenAI-compatible: NON COMPATIBILE
+- Vulnerability agents: OUTPUT_VALIDATION_FAILED
+- Report finale affidabile: NON GENERATO
+
+Osservazione:
+Entrambi i modelli hanno restituito la chiamata alla funzione come JSON
+testuale nel campo message.content, con finish_reason=stop, invece di
+restituire message.tool_calls con finish_reason=tool_calls.
+
+Conclusione:
+Il workflow completo Shannon non è eseguibile con questi due modelli
+nella configurazione Ollama/OpenAI-compatible testata.
+I run falliti non possono essere interpretati come assenza di vulnerabilità.

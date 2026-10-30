@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-06 15:36:06 UTC",
+  "run_id": "host-docker-internal-3000_3fcf",
+  "run_name": "host-docker-internal-3000_3fcf",
+  "scope": {
+    "targets": [
+      {
+        "type": "web_application",
+        "details": {
+          "target_url": "http://host.docker.internal:3000"
+        },
+        "original": "http://host.docker.internal:3000"
+      }
+    ],
+    "scan_mode": "quick",
+    "scope_mode": "auto",
+    "diff_scope": {
+      "active": false,
+      "mode": "auto"
+    },
+    "instruction": "Test http://host.docker.internal:3000 reachability and routes, then call finish_scan."
+  },
+  "summary": {
+    "surfaces_reviewed": 0,
+    "outcomes": {},
+    "findings_filed": 0,
+    "gaps": 1
+  },
+  "machine_observed": {
+    "agents": [
+      {
+        "agent_id": "0724e287",
+        "agent_name": "Root Agent",
+        "status": "failed",
+        "skills": [],
+        "task": "\n\nURLs: - http://host.docker.internal:3000\n\nSpecial instructions: Test http://host.docker.internal:3000 reachability and routes, then call finish_scan.",
+        "is_root": true
+      }
+    ],
+    "skills_exercised": [],
+    "findings_filed": 0,
+    "source": "runtime"
+  },
+  "completeness": {
+    "complete": false,
+    "scan_status": "failed",
+    "exit_reason": "error",
+    "caveats": [
+      "The scan ended with status 'failed' rather than completing, so coverage reflects only the work finished before it stopped.",
+      "The run terminated via 'error' rather than the root agent finishing, so remaining scope was not reached."
+    ]
+  },
+  "entries": [],
+  "gaps": [
+    {
+      "kind": "agent_recorded_no_coverage",
+      "agent_name": "Root Agent",
+      "detail": "Root Agent ran (status: failed) without recording any coverage. Whatever it examined is absent from this record."
+    }
+  ]
+}

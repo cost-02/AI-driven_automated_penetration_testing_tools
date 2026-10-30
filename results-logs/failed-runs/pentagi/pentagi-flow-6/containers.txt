@@ -1,0 +1,5 @@
+NAME         IMAGE                                                   COMMAND                  SERVICE      CREATED        STATUS                    PORTS
+pentagi      vxcontrol/pentagi:latest                                "/opt/pentagi/bin/en…"   pentagi      20 hours ago   Up 15 minutes             127.0.0.1:8443->8443/tcp
+pgexporter   quay.io/prometheuscommunity/postgres-exporter:v0.16.0   "/bin/postgres_expor…"   pgexporter   23 hours ago   Up 16 minutes             127.0.0.1:9187->9187/tcp
+pgvector     vxcontrol/pgvector:latest                               "docker-entrypoint.s…"   pgvector     23 hours ago   Up 16 minutes (healthy)   127.0.0.1:5432->5432/tcp
+scraper      vxcontrol/scraper:latest                                "sh -c '/usr/local/b…"   scraper      23 hours ago   Up 16 minutes             127.0.0.1:9443->443/tcp

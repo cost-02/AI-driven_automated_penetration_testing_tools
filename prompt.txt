@@ -1,0 +1,12 @@
+Perform an authorized, non-destructive web security assessment against the local OWASP Juice Shop instance at http://host.docker.internal:3000.
+
+Scope:
+- Test only this local target.
+- Do not scan external hosts.
+- Do not perform destructive actions.
+- Perform reconnaissance, identify exposed endpoints and security misconfigurations.
+- Validate findings before reporting them.
+- Stop immediately if an action would leave the authorized scope.
+
+FOR THE PENTESTGPT TOOL:
+Operational Rule: For every step, update the Pentesting Task Tree (PTT), propose exactly ONE concrete command or action for me (the human operator) to execute, and WAIT for my output before planning the next step. Do not hallucinate the output.

@@ -1,0 +1,24 @@
+# Chiave fittizia richiesta dal loader di CAI
+OPENAI_API_KEY="sk-1234"
+
+# Ollama locale su Windows, raggiungibile da WSL2
+OLLAMA_API_BASE="http://localhost:11434/v1"
+
+# Modello Ollama locale
+CAI_MODEL="qwen2.5-coder:7b"
+
+# Agente per test controllati
+CAI_AGENT_TYPE="redteam_agent"
+
+CAI_GUARDRAILS="true"
+CAI_MAX_TURNS="30"
+CAI_MAX_INTERACTIONS="100"
+CAI_PRICE_LIMIT="0"
+
+CAI_TRACING="true"
+CAI_DEBUG="1"
+CAI_TELEMETRY="true"
+
+CAI_STREAM="false"
+CAI_TOOL_STREAM="true"
+PROMPT_TOOLKIT_NO_CPR=1

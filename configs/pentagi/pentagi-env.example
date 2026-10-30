@@ -1,0 +1,15 @@
+DEBUG=true
+ASK_USER=true
+OPEN_AI_KEY=ollama-local
+OPEN_AI_SERVER_URL=http://host.docker.internal:11434/v1
+EMBEDDING_URL=http://host.docker.internal:11434
+EMBEDDING_KEY=ollama-local
+EMBEDDING_MODEL=nomic-embed-text
+EMBEDDING_PROVIDER=ollama
+EMBEDDING_BATCH_SIZE=32
+EMBEDDING_MAX_TEXT_BYTES=8192
+EMBEDDING_STRIP_NEW_LINES=true
+COOKIE_SIGNING_SALT=salt # change this to improve security
+DUCKDUCKGO_ENABLED=false
+PENTAGI_POSTGRES_PASSWORD=postgres # change this to improve security
+NEO4J_PASSWORD=devpassword # change this to improve security

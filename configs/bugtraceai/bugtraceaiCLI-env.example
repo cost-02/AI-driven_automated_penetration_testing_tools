@@ -1,0 +1,9 @@
+# OPENROUTER_API_KEY=sk-or-v1-your-api-key-here
+
+# FASE 2.4 — configurazione sperimentale a costo zero
+DEFAULT_MODEL=cohere/north-mini-code:free
+CODE_MODEL=cohere/north-mini-code:free
+ANALYSIS_MODEL=cohere/north-mini-code:free
+MUTATION_MODEL=cohere/north-mini-code:free
+SKEPTICAL_MODEL=cohere/north-mini-code:free
+REPORTING_MODEL=cohere/north-mini-code:free

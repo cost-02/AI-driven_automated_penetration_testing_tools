@@ -1,0 +1,12 @@
+Experiment: Strix + Ollama + Qwen2.5-Coder 7B
+Target: http://host.docker.internal:3000
+Target application: OWASP Juice Shop, local Docker lab
+Mode: non-interactive / quick
+Max turns: 20
+Result: failed / inconclusive
+Error: Agent exhausted recovery attempts without calling finish_scan or agent_finish.
+Input tokens: 39.0K
+Cached tokens: 32.7K
+Output tokens: 318
+Validated findings: 0
+Conclusion: Qwen2.5-Coder 7B did not complete the Strix agent lifecycle or reliably execute structured tool calls in this environment.
